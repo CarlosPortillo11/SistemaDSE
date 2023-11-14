@@ -2,6 +2,16 @@ html {
   font-size: 14px;
 }
 
+@font-face {
+    font-family: 'Neo-Sans';
+    src: url('Neo-Sans-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Neo-Sans-Bold';
+    src: url('Neo-Sans-Bold.otf');
+}
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
