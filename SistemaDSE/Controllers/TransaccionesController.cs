@@ -41,7 +41,7 @@ namespace SistemaDSE.Controllers
 
             using (HttpClient client = new HttpClient())
             {
-                string urlAPI = $"https://localhost:7238/api/transacciones/{numeroTarjeta}?mes={mesActual}&tipo={tipoTransaccion}";
+                string urlAPI = $"https://localhost:7001/api/transacciones/{numeroTarjeta}?mes={mesActual}&tipo={tipoTransaccion}";
 
                 HttpResponseMessage response = await client.GetAsync(urlAPI);
 
@@ -59,7 +59,7 @@ namespace SistemaDSE.Controllers
         [HttpPost]
         public ActionResult Create(TransaccionModel transaccionModel)
         {
-            string urlAPI = $"https://localhost:7238/api/transacciones";
+            string urlAPI = $"https://localhost:7001/api/transacciones";
 
             string numeroTarjeta = HttpContext.Session.GetString("numeroTarjeta");
             string tipoDeTransaccion = HttpContext.Session.GetString("tipoTransaccion");

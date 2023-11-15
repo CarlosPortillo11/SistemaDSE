@@ -58,7 +58,7 @@ namespace SistemaDSE.Controllers
             using (HttpClient client = new HttpClient())
             {
                 CuentaModel usuario = new CuentaModel();
-                string urlAPI = $"https://localhost:7238/api/cuentas/{numeroTarjeta}";
+                string urlAPI = $"https://localhost:7001/api/cuentas/{numeroTarjeta}";
 
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -82,7 +82,7 @@ namespace SistemaDSE.Controllers
             int mesActual = DateTime.Now.Month;
             int mesAnterior = DateTime.Now.AddMonths(-1).Month;
 
-            string urlAPI = $"https://localhost:7238/api/transacciones/reciente/{numeroTarjeta}?mesanterior={mesAnterior}&mes={mesActual}";
+            string urlAPI = $"https://localhost:7001/api/transacciones/reciente/{numeroTarjeta}?mesanterior={mesAnterior}&mes={mesActual}";
 
             decimal montoRecienteTotal = 0;
 

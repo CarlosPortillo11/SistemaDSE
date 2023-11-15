@@ -98,24 +98,18 @@
 
     .upper-info {
         font-size: 1.4rem;
-        & .lower-info
-
-{
-    margin-top: -5px;
-    font-size: 2rem;
-}
-
+        & .lower-info {
+            margin-top: -5px;
+            font-size: 2rem;
+        }
+    }
 }
 
 .main-info {
     font-size: 2rem;
-    & .info-dollar
-
-{
-    font-size: 1.4rem;
-}
-
-}
+    & .info-dollar{
+        font-size: 1.4rem;
+    }
 }
 
 @media (min-width: 768px) {
