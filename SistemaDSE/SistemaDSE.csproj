@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -7,13 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="css\home\home.css" />
-    <None Remove="css\transacciones\create.css" />
+    <None Remove="wwwroot\css\transacciones\create.css" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="css\home\home.css" />
-    <Compile Include="css\transacciones\create.css" />
+    <Compile Include="wwwroot\css\transacciones\create.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\transacciones\index.css" />
   </ItemGroup>
 
   <ItemGroup>
