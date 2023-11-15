@@ -1,8 +1,91 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model SistemaAtlantida.Models.CuentaModel;
+@{
+    ViewData["Title"] = "Dashboard";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@section Styles
+    {
+    <link rel="stylesheet" href="~/css/home/home.css" asp-append-version="true" />
+}
+
+<div class="main-container px-3">
+    <div class="d-flex flex-column col-12 mx-auto">
+        <div class="d-flex flex-column mt-2">
+            <span class="user-welcome">Bienvenido/a</span>
+            <span class="user-name">@Model.NombreTitular</span>
+        </div>
+        <div class="d-flex flex-column col-12 my-4">
+            <div class="d-flex flex-column flex-md-row justify-content-between col-12">
+                <a asp-action="Compras" class="button-box">
+                    <p class="button-text">
+                        Compras
+                    </p>
+                </a>
+                <a asp-action="Pagos" class="button-box">
+                    <p class="button-text">
+                        Pagos
+                    </p>
+                </a>
+                <a asp-action="Transacciones" class="button-box">
+                    <p class="button-text">
+                        Transacciones
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-column col-12 mt-5">
+        <p class="section-title text-center text-md-start m-0 p-0">Estado de Cuenta <span class="section-subtitle">@Model.NumeroTarjeta</span></p>
+        <hr />
+        <div class="d-flex flex-wrap col-12 justify-content-around justify-content-xl-start mt-3">
+            <div class="info-box py-2 py-sm-4 my-2 mx-sm-1 d-flex">
+                <div class="flex-column px-2 px-sm-3">
+                    <p class="upper-info">Saldo<span class="lower-info">Actual</span> </p>
+                    <p class="main-info text-break"><span class="info-dollar">$</span>@Model.SaldoActual</p>
+                </div>
+            </div>
+            <div class="info-box py-2 py-sm-4 my-2 mx-sm-1 d-flex">
+                <div class="flex-column px-2 px-sm-3">
+                    <p class="upper-info">Saldo<span class="lower-info">Disponible</span> </p>
+                    <p class="main-info  text-break"><span class="info-dollar">$</span>@Model.SaldoDisponible</p>
+                </div>
+            </div>
+            <div class="info-box py-2 py-sm-4 my-2 mx-sm-1 d-flex">
+                <div class="flex-column px-2 px-sm-3">
+                    <p class="upper-info">Límite<span class="lower-info">De Credito</span></p>
+                    <p class="main-info  text-break"><span class="info-dollar">$</span>@Model.LimiteCredito</p>
+                </div>
+            </div>
+            <div class="info-box py-2 py-sm-4 my-2 mx-sm-1 d-flex">
+                <div class="flex-column px-2 px-sm-3">
+                    <p class="upper-info">Reciente Total<span class="lower-info">De Compras</span></p>
+                    <p class="main-info  text-break"><span class="info-dollar">$</span>@ViewBag.MontoRecienteTotal</p>
+                </div>
+            </div>
+            <div class="info-box py-2 py-sm-4 my-2 mx-sm-1 d-flex">
+                <div class="flex-column px-2 px-sm-3">
+                    <p class="upper-info">Interes<span class="lower-info">Bonificable</span></p>
+                    <p class="main-info text-break"><span class="info-dollar">$</span>@Model.InteresBonificable</p>
+                </div>
+            </div>
+            <div class="info-box py-2 py-sm-4 my-2 mx-sm-1 d-flex">
+                <div class="flex-column px-2 px-sm-3">
+                    <p class="upper-info">Cuota<span class="lower-info">Mínima</span></p>
+                    <p class="main-info  text-break"><span class="info-dollar">$</span>@Model.CuotaMinima</p>
+                </div>
+            </div>
+            <div class="info-box py-2 py-sm-4 my-2 mx-sm-1 d-flex">
+                <div class="flex-column px-2 px-sm-3">
+                    <p class="upper-info">Monto Total<span class="lower-info">A Pagar</span></p>
+                    <p class="main-info  text-break"><span class="info-dollar">$</span>@Model.MontoPago</p>
+                </div>
+            </div>
+            <div class="info-box py-2 py-sm-4 my-2 mx-sm-1 d-flex">
+                <div class="flex-column px-2 px-sm-3">
+                    <p class="upper-info">Monto Total<span class="lower-info">Con Interes</span></p>
+                    <p class="main-info  text-break"><span class="info-dollar">$</span>@Model.MontoPagoIntereses</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
